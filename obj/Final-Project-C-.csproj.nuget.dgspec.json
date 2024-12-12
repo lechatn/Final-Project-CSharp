@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lecha\\OneDrive - Ynov\\Bureau\\Ynov\\B2\\Final-Project-C-\\Final-Project-C-.csproj": {}
+    "C:\\Users\\benjo\\OneDrive\\Bureau\\ynov\\projets\\Final-Project-CSharp\\Final-Project-C-.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lecha\\OneDrive - Ynov\\Bureau\\Ynov\\B2\\Final-Project-C-\\Final-Project-C-.csproj": {
+    "C:\\Users\\benjo\\OneDrive\\Bureau\\ynov\\projets\\Final-Project-CSharp\\Final-Project-C-.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lecha\\OneDrive - Ynov\\Bureau\\Ynov\\B2\\Final-Project-C-\\Final-Project-C-.csproj",
+        "projectUniqueName": "C:\\Users\\benjo\\OneDrive\\Bureau\\ynov\\projets\\Final-Project-CSharp\\Final-Project-C-.csproj",
         "projectName": "Final-Project-C-",
-        "projectPath": "C:\\Users\\lecha\\OneDrive - Ynov\\Bureau\\Ynov\\B2\\Final-Project-C-\\Final-Project-C-.csproj",
-        "packagesPath": "C:\\Users\\lecha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lecha\\OneDrive - Ynov\\Bureau\\Ynov\\B2\\Final-Project-C-\\obj\\",
+        "projectPath": "C:\\Users\\benjo\\OneDrive\\Bureau\\ynov\\projets\\Final-Project-CSharp\\Final-Project-C-.csproj",
+        "packagesPath": "C:\\Users\\benjo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\benjo\\OneDrive\\Bureau\\ynov\\projets\\Final-Project-CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\lecha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\benjo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
