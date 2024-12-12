@@ -1,0 +1,15 @@
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\Final-Project-C-.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\Final-Project-C-.AssemblyInfoInputs.cache
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\Final-Project-C-.AssemblyInfo.cs
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\Final-Project-C-.csproj.CoreCompileInputs.cache
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\Final-Project-C-.sourcelink.json
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\bin\Debug\net9.0\Final-Project-C-.exe
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\bin\Debug\net9.0\Final-Project-C-.deps.json
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\bin\Debug\net9.0\Final-Project-C-.runtimeconfig.json
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\bin\Debug\net9.0\Final-Project-C-.dll
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\bin\Debug\net9.0\Final-Project-C-.pdb
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\Final-Project-C-.dll
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\refint\Final-Project-C-.dll
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\Final-Project-C-.pdb
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\Final-Project-C-.genruntimeconfig.cache
+C:\Users\lecha\OneDrive - Ynov\Bureau\Ynov\B2\Final-Project-C-\obj\Debug\net9.0\ref\Final-Project-C-.dll
