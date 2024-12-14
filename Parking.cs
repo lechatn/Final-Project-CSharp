@@ -34,37 +34,52 @@ namespace CsharpFinalProject {
             {
                 if (car.IsAvailable)
                 {
-                    Console.WriteLine(car);
+                    Console.WriteLine(car + " id = " + car.Id);
                 }
             }
         }
 
-        public static void RentCar(Car carToRent)
+        public static void ShowNotAvailableCars()
+        {
+            if (ParkingContent.Count == 0)
+            {
+                Console.WriteLine("No cars available");
+            }
+            foreach (Car car in ParkingContent)
+            {
+                if (!car.IsAvailable)
+                {
+                    Console.WriteLine(car + " id = " + car.Id);
+                }
+            }
+        }
+
+        public static void RentCar(int carToRent)
         {
             foreach (Car car in ParkingContent)
             {
-                if (car.Id == carToRent.Id && car.IsAvailable)
+                if (car.Id == carToRent && car.IsAvailable)
                 {
                     car.IsAvailable = false;
                     Console.WriteLine("Car rented successfully");
                 }
-                else if (car.Id == carToRent.Id && !car.IsAvailable)
+                else if (car.Id == carToRent && !car.IsAvailable)
                 {
                     Console.WriteLine("Car is not available");
                 }
             }
         }
 
-        public static void ReturnCar(Car carToReturn)
+        public static void ReturnCar(int carToReturn)
         {
             foreach (Car car in ParkingContent)
             {
-                if (car.Id == carToReturn.Id && !car.IsAvailable)
+                if (car.Id == carToReturn && !car.IsAvailable)
                 {
                     car.IsAvailable = true;
                     Console.WriteLine("Car returned successfully");
                 }
-                else if (car.Id == carToReturn.Id && car.IsAvailable)
+                else if (car.Id == carToReturn && car.IsAvailable)
                 {
                     Console.WriteLine("Car is not rented");
                 }
