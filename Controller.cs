@@ -67,20 +67,7 @@ namespace CsharpFinalProject{
                         Console.Clear();
 
 
-                        Console.WriteLine("Enter the year of the car");
-                        int year;
-                        while(true) {
-                            try {
-                                year = Convert.ToInt32(Console.ReadLine());
-                                if (year >= 1970 && year <= 2024) {
-                                    break;
-                                } else {
-                                    Console.WriteLine("Year must be between 1970 and 2024. Please enter a valid year.");
-                                }
-                            } catch {
-                                Console.WriteLine("Invalid year, please enter a valid year");
-                            }
-                        }
+                        int year = YearManager();
 
                         Car car = new Car(brand, model, year, Parking.ParkingContent);
                         Parking.AddCar(car);
@@ -102,7 +89,7 @@ namespace CsharpFinalProject{
                         Console.Clear();
                         break;
                     case "4":
-                        Parking.ShowAvailableCars();
+                        List<String> availableCars = Parking.AvailableCars();
                         if (Parking.ParkingContent.Count == 0)
                         {
                             Console.WriteLine();
@@ -111,10 +98,12 @@ namespace CsharpFinalProject{
                             Console.Clear();
                             break;
                         }
-                        Console.WriteLine("Enter the id of the car you want to rent");
-                        int idToRent;
+                        int idToRent = OptionsManager(availableCars, "Choose the car you want to rent");
                         try {
-                            idToRent = Convert.ToInt32(Console.ReadLine());
+                            if (idToRent == availableCars.Count - 1) {
+                                Console.Clear();
+                                break;
+                            }
                             if (idToRent < 1 || idToRent > Parking.ParkingContent.Count) {
                                 Console.WriteLine("Invalid id, please enter a valid id");
                                 break;
@@ -247,6 +236,47 @@ namespace CsharpFinalProject{
                     return;
                 }
             }
+        }
+
+        public int YearManager() 
+        {
+            List<int> years = new List<int>();
+            for (int i = 1970; i <= 2024; i++)
+            {
+                years.Add(i);
+            }
+
+            int selectedIndex = 29;
+
+
+            while(true)
+            {
+                Console.Clear();
+                Console.WriteLine("Choose the year of the car\n");
+                Console.WriteLine("Use the up and down arrows to navigate and press enter to select the year\n");
+                
+                Console.WriteLine("- " + years[selectedIndex] + " +");
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
+                if (keyInfo.Key == ConsoleKey.LeftArrow)
+                {
+                    if (selectedIndex != 0){
+                        selectedIndex--;
+                    }
+                }
+                else if (keyInfo.Key == ConsoleKey.RightArrow)
+                {
+                    if (selectedIndex + 1 != years.Count){
+                        selectedIndex++;
+                    }
+                }
+                else if (keyInfo.Key == ConsoleKey.Enter)
+                {
+                    break;
+                }
+
+            }
+
+            return years[selectedIndex];
         }
     }
 }
