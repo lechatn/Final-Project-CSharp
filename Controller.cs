@@ -92,17 +92,17 @@ namespace CsharpFinalProject{
                             break;
                         }
                         int idToRent = OptionsManager(availableCars, "Choose the car you want to rent");
-                        idToRent++;
                         try {
                             if (idToRent == availableCars.Count) {
                                 Console.Clear();
                                 break;
                             }
-                            else if (idToRent < 1 || idToRent > Parking.ParkingContent.Count) {
+                            else if (idToRent < 0 || idToRent > Parking.ParkingContent.Count) {
                                 Console.WriteLine("Invalid id, please enter a valid id");
                                 break;
                             }
                             else {
+                                idToRent = Convert.ToInt32(availableCars[idToRent].Split("-")[0]);
                                 Parking.RentCar(idToRent);
                                 Animation animation = new Animation();
                                 animation.ShowCarExit();
@@ -124,17 +124,17 @@ namespace CsharpFinalProject{
                             break;
                         }
                         int idToReturn = OptionsManager(rentedCars, "Choose the car you want to return");
-                        idToReturn++;
                         try {
                             if (idToReturn == rentedCars.Count) {
                                 Console.Clear();
                                 break;
                             }
-                            else if (idToReturn < 1 || idToReturn > Parking.ParkingContent.Count) {
+                            else if (idToReturn < 0 || idToReturn > Parking.ParkingContent.Count) {
                                 Console.WriteLine("Invalid id, please enter a valid id");
                                 break;
                             }
                             else {
+                                idToReturn = Convert.ToInt32(rentedCars[idToReturn].Split("-")[0]);
                                 Parking.ReturnCar(idToReturn);
                                 Animation animation = new Animation();
                                 animation.ShowCarReturn();
