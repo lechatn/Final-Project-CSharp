@@ -50,6 +50,8 @@ namespace CsharpFinalProject {
             return availableCars;
         }
 
+
+
         public static void ShowAvailableCars()
         {
             if (ParkingContent.Count == 0)
@@ -60,7 +62,7 @@ namespace CsharpFinalProject {
             {
                 if (car.IsAvailable)
                 {
-                    Console.WriteLine(car + " id = " + car.Id);
+                    Console.WriteLine(car);
                 }
             }
         }
@@ -110,6 +112,32 @@ namespace CsharpFinalProject {
                     Console.WriteLine("Car is not rented");
                 }
             }
+        }
+
+        public static List<String> RentedCars()
+        {
+            int counter = 0;
+            List<String> rentedCars = new List<String>();
+            if (ParkingContent.Count == 0)
+            {
+                Console.WriteLine("No cars available");
+                return rentedCars;
+            }
+            foreach (Car car in ParkingContent)
+            {
+                if (car.IsAvailable == false)
+                {
+                    counter++;
+                    rentedCars.Add(car.ToString());
+                }
+            }
+            if (counter == 0)
+            {
+                Console.WriteLine("No cars available");
+                return rentedCars;
+            }
+            rentedCars.Add("Exit");
+            return rentedCars;
         }
     }
 }

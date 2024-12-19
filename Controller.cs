@@ -34,13 +34,6 @@ namespace CsharpFinalProject{
             { "Citroen", new List<string> { "C3", "C4", "C5", "C3 Aircross", "C4 Cactus" } }
         };
 
-        public string[] car = {
-            "      ______",
-            "  ___/      \\___",
-            " |   _      _   |",
-            "'-(_)-------(_)--'"
-        };
-
         public void Start()
         {
             Console.Clear();
@@ -90,7 +83,7 @@ namespace CsharpFinalProject{
                         break;
                     case "4":
                         List<String> availableCars = Parking.AvailableCars();
-                        if (Parking.ParkingContent.Count == 0)
+                        if (Parking.ParkingContent.Count == 0 || availableCars.Count == 0)
                         {
                             Console.WriteLine();
                             Console.WriteLine("Press any key to return to the main menu");
@@ -99,26 +92,30 @@ namespace CsharpFinalProject{
                             break;
                         }
                         int idToRent = OptionsManager(availableCars, "Choose the car you want to rent");
+                        idToRent++;
                         try {
-                            if (idToRent == availableCars.Count - 1) {
+                            if (idToRent == availableCars.Count) {
                                 Console.Clear();
                                 break;
                             }
-                            if (idToRent < 1 || idToRent > Parking.ParkingContent.Count) {
+                            else if (idToRent < 1 || idToRent > Parking.ParkingContent.Count) {
                                 Console.WriteLine("Invalid id, please enter a valid id");
                                 break;
+                            }
+                            else {
+                                Parking.RentCar(idToRent);
+                                Animation animation = new Animation();
+                                animation.ShowCarExit();
                             }
                         } catch {
                             Console.WriteLine("Invalid id, please enter a valid id");
                             break;
                         }
-                        Parking.RentCar(idToRent);
-                        ShowCarExit();
                         Console.Clear();
                         break;
                     case "5":
-                        Parking.ShowNotAvailableCars();
-                        if (Parking.ParkingContent.Count == 0)
+                        List<String> rentedCars = Parking.RentedCars();
+                        if (Parking.ParkingContent.Count == 0 || rentedCars.Count == 0)
                         {
                             Console.WriteLine();
                             Console.WriteLine("Press any key to return to the main menu");
@@ -126,20 +123,26 @@ namespace CsharpFinalProject{
                             Console.Clear();
                             break;
                         }
-                        Console.WriteLine("Enter the id of the car you want to return");
-                        int idToReturn;
+                        int idToReturn = OptionsManager(rentedCars, "Choose the car you want to return");
+                        idToReturn++;
                         try {
-                            idToReturn = Convert.ToInt32(Console.ReadLine());
-                            if (idToReturn < 1 || idToReturn > Parking.ParkingContent.Count) {
+                            if (idToReturn == rentedCars.Count) {
+                                Console.Clear();
+                                break;
+                            }
+                            else if (idToReturn < 1 || idToReturn > Parking.ParkingContent.Count) {
                                 Console.WriteLine("Invalid id, please enter a valid id");
                                 break;
+                            }
+                            else {
+                                Parking.ReturnCar(idToReturn);
+                                Animation animation = new Animation();
+                                animation.ShowCarReturn();
                             }
                         } catch {
                             Console.WriteLine("Invalid id, please enter a valid id");
                             break;
                         }
-                        Parking.ReturnCar(idToReturn);
-                        ShowCarReturn();
                         Console.Clear();
                         break;
                     case "6":
@@ -188,56 +191,6 @@ namespace CsharpFinalProject{
             return selectedIndex;
         }
 
-        public void ShowCarExit()
-        {
-            int consoleWidth = Console.WindowWidth;
-            int carLength = car[0].Length;
-            int maxPosition = consoleWidth - carLength;
-            int stopPosition = 100;
-            int position = 0;
-
-            while (true)
-            {
-                Console.Clear();
-                foreach (string line in car)
-                {
-                    Console.SetCursorPosition(position, Console.CursorTop);
-                    Console.WriteLine(line);
-                }
-                Thread.Sleep(10);
-                position++;
-                if (position > stopPosition)
-                {
-                    return;
-                }
-            }
-        }
-
-        public void ShowCarReturn()
-        {
-            int consoleWidth = Console.WindowWidth;
-            int carLength = car[0].Length;
-            int maxPosition = consoleWidth - carLength;
-            int stopPosition = 100;
-            int position = stopPosition;
-
-            while (true)
-            {
-                Console.Clear();
-                foreach (string line in car)
-                {
-                    Console.SetCursorPosition(position, Console.CursorTop);
-                    Console.WriteLine(line);
-                }
-                Thread.Sleep(10);
-                position--;
-                if (position < 0)
-                {
-                    return;
-                }
-            }
-        }
-
         public int YearManager() 
         {
             List<int> years = new List<int>();
@@ -253,7 +206,7 @@ namespace CsharpFinalProject{
             {
                 Console.Clear();
                 Console.WriteLine("Choose the year of the car\n");
-                Console.WriteLine("Use the up and down arrows to navigate and press enter to select the year\n");
+                Console.WriteLine("Use the left and right arrows to navigate and press enter to select the year\n");
                 
                 Console.WriteLine("- " + years[selectedIndex] + " +");
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
