@@ -23,6 +23,7 @@ A simple console application in C# to manage a car parking system.
 1. Clone the repository:  
    ```bash
    git clone https://github.com/lechatn/Final-Project-CSharp.git
+   cd Final-Project-CSharp
 
 2. Run the following commmand:
     ```bash
