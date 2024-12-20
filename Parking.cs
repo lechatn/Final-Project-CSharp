@@ -58,12 +58,18 @@ namespace CsharpFinalProject {
             {
                 Console.WriteLine("No cars available");
             }
+            int counter = 0;
             foreach (Car car in ParkingContent)
             {
                 if (car.IsAvailable)
                 {
                     Console.WriteLine(car);
+                    counter++;
                 }
+            }
+            if (counter == 0)
+            {
+                Console.WriteLine("No cars available");
             }
         }
 
