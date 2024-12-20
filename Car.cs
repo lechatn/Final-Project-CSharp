@@ -3,17 +3,15 @@ using System;
 namespace CsharpFinalProject {
     public class Car
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public bool IsAvailable { get; set; }
 
-        public Car(string Brand, string Model, int Year)
+        public Car(string Brand, string Model, int Year, List<Car> parkingContent)
         {
-            Guid myUUId = Guid.NewGuid();
-            string convertedUUID = myUUId.ToString();
-            this.Id = convertedUUID;
+            this.Id = parkingContent.Count + 1;
             this.Brand = Brand;
             this.Model = Model;
             this.Year = Year;
@@ -21,7 +19,7 @@ namespace CsharpFinalProject {
         }
 
         public override string ToString(){
-            return $"{Brand} {Model} {Year} {IsAvailable}";
+            return $"{Id}- {Brand} {Model} of {Year}, status : " + (IsAvailable ? " available" : " not available");
         }
     }
 }
