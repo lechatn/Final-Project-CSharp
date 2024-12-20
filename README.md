@@ -14,7 +14,7 @@ A simple console application in C# to manage a car parking system.
 
 ## Requirements  
 
-- **.NET SDK** must be installed. Download it [here](https://dotnet.microsoft.com/download).  
+- **.NET SDK** must be installed. Download it [here](https://dotnet.microsoft.com/download). Version 9.0 is required.
 
 ---
 

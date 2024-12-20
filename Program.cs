@@ -5,13 +5,13 @@ namespace CsharpFinalProject
 {
     class Program
     {
-        static void Main(string[] str)
+        static void Main(string[] str) // Main method
         {
             Console.WriteLine("Welcome to the Parking System!");
             Console.WriteLine("You can upgrade the terminal window size to have a better experience");
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
-            new Controller().Start();
+            new Controller().Start(); // Start the controller
         }
     }
 }
